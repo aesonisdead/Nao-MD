@@ -11,9 +11,9 @@ import { fileURLToPath } from 'url'
 import moment from 'moment-timezone'
 
 /*============= WAKTU =============*/
-let wibh = moment.tz('Asia/Jakarta').format('HH')
-let wibm = moment.tz('Asia/Jakarta').format('mm')
-let wibs = moment.tz('Asia/Jakarta').format('ss')
+let wibh = moment.tz('Africa/Casablanca').format('HH')
+let wibm = moment.tz('Africa/Casablanca').format('mm')
+let wibs = moment.tz('Africa/Casablanca').format('ss')
 let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
 let wktugeneral = `${wibh}:${wibm}:${wibs}`
 
@@ -31,7 +31,7 @@ const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
 global.pairing = '6285864034767'
-global.owner = [['212605158422', 'Aeson', true]]
+global.owner = [['212605158422', 'Sam', true]]
 global.mods = []
 global.prems = []
 global.nomorbot = '6285864034767'
@@ -40,13 +40,13 @@ global.nomorown = '212605158422'
 /*============= WATERMARK =============*/
 global.readMore = readMore
 global.author = 'Aeson'
-global.namebot = 'Nao-MD ESM'
-global.wm = '© Nao-MD By Aeson'
+global.namebot = 'Nao-MD'
+global.wm = '© Nao-MD By Sam'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Made By ${namebot}\ngithub.com/????\n\nNao-MD ESM\n+${nomorbot}`
-global.stickauth = `© Nao-MD By Aeson`
+global.stickpack = `Sticker Made By ${namebot}\ngithub.com/????\n\nNao-MD\n+${nomorbot}`
+global.stickauth = `© Nao-MD By Sam`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
@@ -60,8 +60,8 @@ global.sfb = 'https://www.facebook.com/share/1GK3QBLari/'
 global.snh = '-'
 
 /*============= DONASI =============*/
-global.qris = 'https://api.ryzumi.vip/images/qris.png'
-global.psaweria = 'https://saweria.co/shirokamiryzen'
+global.qris = '-'
+global.psaweria = '-'
 
 /*============= TAMPILAN =============*/
 global.dmenut = 'ଓ═┅═━–〈' //top
