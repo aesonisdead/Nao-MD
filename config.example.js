@@ -39,7 +39,7 @@ global.nomorown = '212605158422'
 
 /*============= WATERMARK =============*/
 global.readMore = readMore
-global.author = 'Aeson'
+global.author = 'Aethon'
 global.namebot = 'Nao-MD'
 global.wm = '© Nao-MD By Aethon'
 global.watermark = wm
