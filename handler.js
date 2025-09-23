@@ -299,16 +299,16 @@ export async function handler(chatUpdate) {
                 m.isCommand = true
                 let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                 if(xp > 200)
-                    // m.reply('Ngecit -_-') // Hehehe
-                    console.log("ngecit -_-");
+                    // m.reply('Squeak -_-') // Hehehe
+                    console.log("Squeak -_-");
                 else
                     m.exp += xp
                 if(!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.reply(m.chat, `[❗] Limit harian kamu telah habis, silahkan beli Premium melalui *${usedPrefix}premium*`, m)
+                    this.reply(m.chat, `[❗] Your daily limit has been reached., Please purchase Premium via *${usedPrefix}premium*`, m)
                     continue // Limit habis
                 }
                 if(plugin.level > _user.level) {
-                    this.reply(m.chat, `[💬] Diperlukan level ${plugin.level} untuk menggunakan perintah ini\n*Level mu:* ${_user.level} 📊`, m)
+                    this.reply(m.chat, `[💬] Required level ${plugin.level} to use this command\n*Level Up:* ${_user.level} 📊`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -364,7 +364,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if(m.limit)
-                        m.reply(+m.limit + ' Limit kamu terpakai')
+                        m.reply(+m.limit + ' Your limit is used.')
                 }
                 break
             }
@@ -521,7 +521,7 @@ export async function deleteUpdate(message) {
         this.reply(msg.chat, `
 Detected @${participant.split`@`[0]} has deleted the message. 
 To turn off this feature, type
-*.enable delete*
+*.disable delete*
 
 To delete messages sent by Bot, reply message with command
 *.delete*`, msg)
