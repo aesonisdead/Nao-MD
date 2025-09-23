@@ -32,7 +32,7 @@ const readMore = more.repeat(4001)
 /*============= MAIN INFO =============*/
 global.pairing = '6285864034767'
 global.owner = [['212605158422', 'Aethon', true]]
-global.mods = []
+global.mods = ['212660926555']
 global.prems = []
 global.nomorbot = '6285864034767'
 global.nomorown = '212605158422'
