@@ -10,9 +10,9 @@ handler.before = async function (m, { isAdmin, isBotAdmin }) {
     if (chat.antiLink && isGroupLink && !isAdmin && !m.isBaileys && m.isGroup) {
         let thisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
         if (m.text.includes(thisGroup)) throw false // jika link grup itu sendiri gak dikick
-        if (!isBotAdmin) m.reply(` *「 ANTILINK 」* ${isAdmin ? "Admin mah bebas ygy :'v" : `\n\nlink group terdeteksi dan ${global.namebot} bukan admin jadi tidak bisa ngekick!`}`)
+        if (!isBotAdmin) m.reply(` *「 ANTILINK 」* ${isAdmin ? "Oh you're an admin my bad:'v" : `\n\nlink group detected and ${global.namebot} not admin so can't kick!`}`)
         if (isBotAdmin) {
-            m.reply(` *「 ANTILINK 」* \n\nLink Group Terdeteksi, bye Kamu Akan Di Kick!!`.trim())
+            m.reply(` *「 ANTILINK 」* \n\nLink Group Detected, Bye You Will Be Kicked!!`.trim())
             await this.delay(500)
             await this.groupParticipantsUpdate(m.chat, [m.sender], "remove")
             await this.sendMessage(m.chat, { delete: { remoteJid: m.chat, id: m.id }}) // Hapus pesan yang mengandung tautan
