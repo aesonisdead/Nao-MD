@@ -7,32 +7,32 @@ export async function before(m) {
 
     if (new Date() - user.pc < 86400000) return // waktu ori 21600000 (6 jam)
     await m.reply(`
-📮Note: Jangan spam botnya
-⏩Ketik *.menu* untuk menampilkan menu
+📮Note: Don't spam the bot.
+⏩Type *.menu* to display the menu
 
-📝Ingin menghilangkan *limit*?
-Beli akses *Premium*
+📝Want to get rid of *limit*?
+Buy access to *Premium*
 
-Ketik *.premium* untuk info lebih lengkap
+Type *.premium* for more information
 `)
     user.pc = new Date * 1
 }
 
 
 function ucapan() {
-    const time = moment.tz('Asia/Jakarta').format('HH')
-    let res = "Selamat dinihari 🌆"
+    const time = moment.tz('Africa/Casablanca').format('HH')
+    let res = "Good morning 🌆"
     if (time >= 4) {
-        res = "Selamat pagi 🌄"
+        res = "Good morning 🌄"
     }
     if (time > 10) {
-        res = "Selamat siang ☀️"
+        res = "Good afternoon ☀️"
     }
     if (time >= 15) {
-        res = "Selamat sore 🌇"
+        res = "Good evening 🌇"
     }
     if (time >= 18) {
-        res = "Selamat malam 🌙"
+        res = "Good night 🌙"
     }
     return res
 }
