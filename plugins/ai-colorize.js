@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     try {
         let q = m.quoted ? m.quoted : m;
         let mime = (q.msg || q).mimetype || '';
-        if (!mime) throw `Kirim/Reply Gambar dengan caption ${usedPrefix}colorize`;
+        if (!mime) throw `Send/Reply Image with caption ${usedPrefix}colorize`;
         m.reply(wait);
 
         let media = await q.download();
