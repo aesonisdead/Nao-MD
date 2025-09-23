@@ -31,33 +31,33 @@ const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
 global.pairing = '6285864034767'
-global.owner = [['6285174269046', 'ShirokamiRyzen', true]]
+global.owner = [['212605158422', 'Aeson', true]]
 global.mods = []
 global.prems = []
 global.nomorbot = '6285864034767'
-global.nomorown = '6285174269046'
+global.nomorown = '212605158422'
 
 /*============= WATERMARK =============*/
 global.readMore = readMore
-global.author = 'Shirokami Ryzen'
+global.author = 'Aeson'
 global.namebot = 'Nao-MD ESM'
-global.wm = '© Nao-MD By Shirokami Ryzen'
+global.wm = '© Nao-MD By Aeson'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\ngithub.com/ShirokamiRyzen\n\nNao-MD ESM\n+${nomorbot}`
-global.stickauth = `© Nao-MD By Shirokami Ryzen`
+global.stickpack = `Sticker Made By ${namebot}\ngithub.com/????\n\nNao-MD ESM\n+${nomorbot}`
+global.stickauth = `© Nao-MD By Aeson`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
-global.sig = 'https://www.instagram.com/fatih_frdaus'
-global.sgh = 'https://github.com/ShirokamiRyzen'
-global.sgc = 'https://whatsapp.com/channel/0029Vb2qO9Q5vKAGd2t7ap1F'
-global.sgw = 'https://ryzumi.vip'
+global.sig = '-'
+global.sgh = '-'
+global.sgc = '-'
+global.sgw = '-'
 global.sdc = '-'
-global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
-global.snh = 'https://www.instagram.com/fatih_frdaus'
+global.sfb = 'https://www.facebook.com/share/1GK3QBLari/'
+global.snh = '-'
 
 /*============= DONASI =============*/
 global.qris = 'https://api.ryzumi.vip/images/qris.png'
