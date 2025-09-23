@@ -519,11 +519,11 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if(chat.delete) return
         this.reply(msg.chat, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan. 
-Untuk mematikan fitur ini, ketik
+Detected @${participant.split`@`[0]} has deleted the message. 
+To turn off this feature, type
 *.enable delete*
 
-Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
+To delete messages sent by Bot, reply message with command
 *.delete*`, msg)
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
@@ -533,17 +533,17 @@ Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*ONLY DEVELOPER* • COMMAND INI HANYA UNTUK DEVELOPER BOT',
-        owner: '*ONLY OWNER* • COMMAND INI HANYA UNTUK OWNER BOT',
-        mods: '*ONLY MODERATOR* • COMMAND INI HANYA UNTUK MODERATOR BOT',
-        premium: '*ONLY PREMIUM* • COMMAND INI HANYA UNTUK PREMIUM USER',
-        group: '*GROUP CHAT* • COMMAND INI HANYA BISA DIPAKAI DIDALAM GROUP',
-        private: '*PRIVATE CHAT* • COMMAND INI HANYA BISA DIPAKAI DIPRIVAT CHAT',
-        admin: '*ONLY ADMIN* • COMMAND INI HANYA UNTUK ADMIN GROUP',
-        botAdmin: '*ONLY BOT ADMIN* • COMMAND INI HANYA BISA DIGUNAKAN KETIKA BOT MENJADI ADMIN',
-        unreg: '*YOU ARE NOT REGISTERED YET* • KETIK .daftar UNTUK BISA MENGGUNAKAN FITUR INI',
-        restrict: '*RESTRICT* • RESTRICT BELUM DINYALAKAN DICHAAT INI',
-        disable: '*DISABLED* • CMD INI TELAH DIMATIKAN OLEH OWNER', 
+        rowner: '*ONLY DEVELOPER* • THIS COMMAND IS FOR BOT DEVELOPER ONLY',
+        owner: '*ONLY OWNER* • THIS COMMAND IS FOR BOT OWNER ONLY',
+        mods: '*ONLY MODERATOR* • THIS COMMAND IS FOR BOT MODERATORS ONLY',
+        premium: '*ONLY PREMIUM* • THIS COMMAND IS FOR PREMIUM USERS ONLY',
+        group: '*GROUP CHAT* • THIS COMMAND CAN ONLY BE USED IN A GROUP',
+        private: '*PRIVATE CHAT* • THIS COMMAND CAN ONLY BE USED IN PRIVATE CHAT',
+        admin: '*ONLY ADMIN* • THIS COMMAND IS FOR GROUP ADMIN ONLY',
+        botAdmin: '*ONLY BOT ADMIN* • THIS COMMAND CAN ONLY BE USED WHEN THE BOT IS AN ADMIN',
+        unreg: '*YOU ARE NOT REGISTERED YET* • TYPE .register TO USE THIS FEATURE',
+        restrict: '*RESTRICT* • RESTRICT IS NOT TURNED ON IN THIS CHAT',
+        disable: '*DISABLED* • THIS CMD HAS BEEN DISABLED BY THE OWNER', 
     }[type]
     if(msg) return conn.reply(m.chat, msg, m)
 }
