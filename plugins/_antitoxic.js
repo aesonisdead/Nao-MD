@@ -1,4 +1,4 @@
-let badwordRegex = /anj(k|g)|ajn?(g|k)|a?njin(g|k)|bajingan|b(a?n)?gsa?t|ko?nto?l|me?me?(k|q)|pe?pe?(k|q)|meki|titi(t|d)|pe?ler|tetek|toket|ngewe|go?blo?k|to?lo?l|idiot|(k|ng)e?nto?(t|d)|jembut|bego|dajj?al|janc(u|o)k|pantek|puki ?(mak)?|kimak|kampang|lonte|col(i|mek?)|pelacur|henceu?t|nigga|fuck|dick|bitch|tits|bastard|asshole|dontol|kontoi|ontol/i // tambahin sendiri
+let badwordRegex = /fuck|shit|dick|pussy|bitch|tits|boobs|bastard|asshole|slut|whore|cunt|nigga|faggot|cock|dildo|prick|wanker|jerkoff|motherfucker|retard|idiot|loser/i // tambahin sendiri
 
 export function before(m, { isBotAdmin }) {
     if (m.isBaileys && m.fromMe) return !0
@@ -9,7 +9,7 @@ export function before(m, { isBotAdmin }) {
 
     if (chat.antiBadword && isBadword) {
         user.warning += 1
-        m.reply('Jangan Toxic ya!!\n' + `kamu memiliki ${user.warning} warning` + '\nUntuk mematikan ketik *.disable antibadword*')
+        m.reply('Don't be toxic, okay!!\n' + `you have ${user.warning} warning` + '\nTo turn off type *.disable antibadword*')
         if (user.warning >= 5) {
             user.banned = false
             user.warning = 0
