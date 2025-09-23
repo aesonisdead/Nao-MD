@@ -7,7 +7,7 @@ export async function all(m) {
             if (this.spam[m.sender].count > 15) {
                 global.db.data.users[m.sender].banned = true
                 global.db.data.users[m.sender].banReason = '*Auto detect:* Spam'
-                m.reply("Nomer kamu telah di-ban karena spam.")
+                m.reply("Your number has been banned for spam.")
             }
             this.spam[m.sender].count = 0
             this.spam[m.sender].lastspam = m.messageTimestamp.toNumber()
