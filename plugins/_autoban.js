@@ -2,7 +2,7 @@ let handler = m => m
 
 handler.before = async function (m) {
     let regionData = {
-        '212': 'Morocco (+212)',
+        '62': 'Indonesia (+62)',
         '265': 'Malawi (+265)',
         '91': 'India (+91)',
         '90': 'Turkey (+90)',
