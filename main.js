@@ -155,9 +155,9 @@ async function connectionUpdate(update) {
   }
 
   if(connection == 'connecting') {
-    console.log(chalk.redBright('⚡ Mengaktifkan Bot, Mohon tunggu sebentar...'));
+    console.log(chalk.redBright('⚡ Activating Bot, Please wait a moment...'));
   } else if(connection == 'open') {
-    console.log(chalk.green('✅ Tersambung'));
+    console.log(chalk.green('✅ Connected'));
   }
 
   if(isOnline == true) {
@@ -167,11 +167,11 @@ async function connectionUpdate(update) {
   }
 
   if(receivedPendingNotifications) {
-    console.log(chalk.yellow('Menunggu Pesan Baru'));
+    console.log(chalk.yellow('Waiting for New Messages'));
   }
 
   if(connection == 'close') {
-    console.log(chalk.red('⏱️ Koneksi terputus & mencoba menyambung ulang...'));
+    console.log(chalk.red('⏱️ Connection lost & trying to reconnect...'));
   }
 
   if(lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== CONNECTING) {
@@ -217,18 +217,18 @@ global.reloadHandler = async function (restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = '❖━━━━━━[ Selamat Datang ]━━━━━━❖\n\n┏––––––━━━━━━━━•\n│☘︎ @subject\n┣━━━━━━━━┅┅┅\n│( 👋 Hallo @user)\n├[ Intro ]—\n│ NAMA: \n│ USIA: \n│ JENIS KELAMIN:\n┗––––––━━┅┅┅\n\n––––––┅┅ DESKRIPSI ┅┅––––––\n@desc'
-  conn.bye = '❖━━━━━━[ Meninggalkan ]━━━━━━❖\nSayonara @user 👋😃'
-  conn.spromote = '@user Sekarang jadi admin!'
-  conn.sdemote = '@user Sekarang bukan lagi admin!'
-  conn.sDesc = 'Deskripsi telah diubah menjadi \n@desc'
-  conn.sSubject = 'Judul grup telah diubah menjadi \n@subject'
-  conn.sIcon = 'Icon grup telah diubah!'
-  conn.sRevoke = 'Link group telah diubah ke \n@revoke'
-  conn.sAnnounceOn = 'Group telah di tutup!\nsekarang hanya admin yang dapat mengirim pesan.'
-  conn.sAnnounceOff = 'Group telah di buka!\nsekarang semua peserta dapat mengirim pesan.'
-  conn.sRestrictOn = 'Edit Info Grup di ubah ke hanya admin!'
-  conn.sRestrictOff = 'Edit Info Grup di ubah ke semua peserta!'
+  conn.welcome = '❖━━━━━━[ Welcome ]━━━━━━❖\n\n┏––––––━━━━━━━━•\n│☘︎ @subject\n┣━━━━━━━━┅┅┅\n│( 👋 Hrllo @user)\n├[ Intro ]—\n│ NAME: \n│ AGE: \n│ GENDER:\n┗––––––━━┅┅┅\n\n––––––┅┅ DESCRIPTION ┅┅––––––\n@desc'
+  conn.bye = '❖━━━━━━[ Goodbye ]━━━━━━❖\nSayonara @user 👋😃'
+  conn.spromote = '@user is now an admin!'
+  conn.sdemote = '@user is not an admin anymore!'
+  conn.sDesc = 'The description has been changed to \n@desc'
+  conn.sSubject = 'The group title has been changed to \n@subject'
+  conn.sIcon = 'Group icon has been changed!'
+  conn.sRevoke = 'The group link has been changed to \n@revoke'
+  conn.sAnnounceOn = 'Group has been closed.!\nnow only admin can send messages.'
+  conn.sAnnounceOff = 'Group has been opened.!\nNow all participants can send messages.'
+  conn.sRestrictOn = 'Edit Group Info changed to admin only!'
+  conn.sRestrictOff = 'Edit Group Info changed to all participants!'
 
   conn.handler = handler.handler.bind(global.conn)
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn)
@@ -238,10 +238,10 @@ global.reloadHandler = async function (restatConn) {
   conn.credsUpdate = saveCreds.bind(global.conn)
 
   conn.ev.on('call', async (call) => {
-    console.log('Panggilan diterima:', call);
+    console.log('Call received:', call);
     if(call.status === 'ringing') {
       await conn.rejectCall(call.id);
-      console.log('Panggilan ditolak');
+      console.log('Call rejected');
     }
   })
   conn.ev.on('messages.upsert', conn.handler)
@@ -341,15 +341,15 @@ async function _quickTest() {
   Object.freeze(global.support);
 
   if(!s.ffmpeg) {
-    conn.logger.warn(`Silahkan install ffmpeg terlebih dahulu agar bisa mengirim video`);
+    conn.logger.warn(`Please install ffmpeg first to be able to send videos.`);
   }
 
   if(s.ffmpeg && !s.ffmpegWebp) {
-    conn.logger.warn('Sticker Mungkin Tidak Beranimasi tanpa libwebp di ffmpeg (--enable-libwebp while compiling ffmpeg)');
+    conn.logger.warn('Stickers May Not Animate without libwebp in ffmpeg (--enable-libwebp while compiling ffmpeg)');
   }
 
   if(!s.convert && !s.magick && !s.gm) {
-    conn.logger.warn('Fitur Stiker Mungkin Tidak Bekerja Tanpa imagemagick dan libwebp di ffmpeg belum terinstall (pkg install imagemagick)');
+    conn.logger.warn('Sticker Feature May Not Work Without imagemagick and libwebp in ffmpeg installed (pkg install imagemagick)');
   }
 }
 
