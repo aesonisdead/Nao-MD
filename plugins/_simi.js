@@ -18,9 +18,9 @@ handler.before = async (m) => {
         if (!res.ok) throw new Error("Failed to fetch data from SimSimi API");
 
         let json = await res.json();
-        if (json.status !== '200') return m.reply('Gagal mendapatkan respons dari Simi');
+        if (json.status !== '200') return m.reply('Failed to get a response from Simi');
 
-        let simiMessage = json.message || 'Gagal mendapatkan pesan dari Simi';
+        let simiMessage = json.message || 'Failed to get message from Simi';
         await m.reply(simiMessage);
         return true;
     }
