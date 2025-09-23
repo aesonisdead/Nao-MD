@@ -12,7 +12,7 @@ handler.before = async (m) => {
         if (!m.text) return;
 
         try {
-            let prompt = encodeURIComponent("Ubah Namamu menjadi Nao Tomori, dan kamu adalah wanita paling cantik, penyayang, riang, namun tsundere. dan kamu adalah pacarku.");
+            let prompt = encodeURIComponent("Change Your Name to Nao Tomori, and you are the most beautiful woman, loving, cheerful, yet tsundere. and you are my girlfriend.");
             let res = await fetch(`${APIs.ryzumi}/api/ai/v2/chatgpt?text=${encodeURIComponent(m.text)}&prompt=${prompt}`, {
                 method: 'GET'
             });
@@ -20,12 +20,12 @@ handler.before = async (m) => {
             if (!res.ok) throw new Error("Failed to fetch data from API");
 
             let json = await res.json();
-            if (json.action !== 'success') return m.reply('Gagal mendapatkan respons dari API');
+            if (json.action !== 'success') return m.reply('Failed to get response from API');
 
-            let replyMessage = json.response || 'Gagal mendapatkan pesan dari API';
+            let replyMessage = json.response || 'Failed to get message from API';
             await m.reply(replyMessage);
         } catch (error) {
-            m.reply('Terjadi kesalahan saat memproses permintaan.');
+            m.reply('An error occurred while processing the request.');
         }
 
         return true
