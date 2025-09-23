@@ -247,12 +247,12 @@ handler.all = async function(m) {
 export default handler
 
 function ucapan() {
-    const time = moment.tz('Asia/Jakarta').format('HH')
-    let res = "Selamat malam 🌙"
-    if (time >= 4) res = "Selamat pagi 🌄"
-    if (time > 10) res = "Selamat siang ☀️"
-    if (time >= 15) res = "Selamat sore 🌅"
-    if (time >= 18) res = "Selamat malam 🌙"
+    const time = moment.tz('Africa/Casablanca').format('HH')
+    let res = "Good night 🌙"
+    if (time >= 4) res = "Good morning 🌄"
+    if (time > 10) res = "Good afternoon ☀️"
+    if (time >= 15) res = "Good afternoon 🌅"
+    if (time >= 18) res = "Good night 🌙"
     return res
 }
 
