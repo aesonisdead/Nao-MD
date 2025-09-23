@@ -31,7 +31,7 @@ const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
 global.pairing = '6285864034767'
-global.owner = [['212605158422', 'Sam', true]]
+global.owner = [['212605158422', 'Aethon', true]]
 global.mods = []
 global.prems = []
 global.nomorbot = '6285864034767'
@@ -41,12 +41,12 @@ global.nomorown = '212605158422'
 global.readMore = readMore
 global.author = 'Aeson'
 global.namebot = 'Nao-MD'
-global.wm = '© Nao-MD By Sam'
+global.wm = '© Nao-MD By Aethon'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
 global.stickpack = `Sticker Made By ${namebot}\ngithub.com/????\n\nNao-MD\n+${nomorbot}`
-global.stickauth = `© Nao-MD By Sam`
+global.stickauth = `© Nao-MD By Aethon`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
@@ -56,7 +56,7 @@ global.sgh = '-'
 global.sgc = '-'
 global.sgw = '-'
 global.sdc = '-'
-global.sfb = 'https://www.facebook.com/share/1GK3QBLari/'
+global.sfb = 'https://www.facebook.com/aethonxei'
 global.snh = '-'
 
 /*============= DONASI =============*/
