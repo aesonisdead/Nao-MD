@@ -20,7 +20,7 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
 
   } catch (error) {
     await conn.sendMessage(m.chat, {
-      text: `Error: Mana textnya njir?`
+      text: `Error: Where is the text??`
     })
   }
 }
