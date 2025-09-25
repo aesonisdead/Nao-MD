@@ -4,7 +4,7 @@ import { ryzenCDN } from '../lib/uploadFile.js'
 const handler = async (m, { text, usedPrefix, command, conn }) => {
   try {
     if (!text && !m.quoted && !m.mtype.includes('imageMessage')) {
-      throw "Masukkan pertanyaan atau kirim gambar untuk deskripsi!\n\n*Contoh:* Siapa presiden Indonesia?";
+      throw "Enter a question or send a picture for description!\n\n*Example:* Who is the president of Usa?";
     }
 
     let imgUrl = null;
@@ -14,7 +14,7 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
       if (img) {
         img = Buffer.from(img);
         let link = await ryzenCDN(img);
-        if (!link) throw 'Gagal mengupload gambar';
+        if (!link) throw 'Failed to upload image';
         imgUrl = typeof link === 'object' ? link.url : link;
       }
     } else if (m.mtype.includes('imageMessage')) {
@@ -22,7 +22,7 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
       if (img) {
         img = Buffer.from(img);
         let link = await ryzenCDN(img);
-        if (!link) throw 'Gagal mengupload gambar';
+        if (!link) throw 'Failed to upload image';
         imgUrl = typeof link === 'object' ? link.url : link;
       }
     }
@@ -33,22 +33,22 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
     } else if (text) {
       apiUrl = `${APIs.ryzumi}/api/ai/gemini?text=${encodeURIComponent(text)}`;
     } else {
-      throw "Tidak ada teks atau gambar yang valid untuk diproses.";
+      throw "There is no valid text or image to process..";
     }
 
     let hasil = await fetch(apiUrl);
-    if (!hasil.ok) throw new Error("Request ke API gagal: " + hasil.statusText);
+    if (!hasil.ok) throw new Error("Request to API failed: " + hasil.statusText);
 
     let result = await hasil.json();
-    if (!result.success) throw new Error("Response API tidak berhasil");
+    if (!result.success) throw new Error("API response failed");
 
-    let responseMessage = result.answer || "Tidak ada respons dari AI.";
+    let responseMessage = result.answer || "No response from AI.";
 
     await conn.sendMessage(m.chat, { text: responseMessage });
 
   } catch (error) {
     console.error('Error in handler:', error);
-    await conn.sendMessage(m.chat, { text: `Error: Mana textnya njir?` });
+    await conn.sendMessage(m.chat, { text: `Error: Where is the text??` });
   }
 }
 
