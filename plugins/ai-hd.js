@@ -7,18 +7,18 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         let name = await conn.getName(who)
         let q = m.quoted ? m.quoted : m
         let mime = (q.msg || q).mimetype || ''
-        if (!mime) throw 'Kirim/Reply Gambar dengan caption .toanime'
+        if (!mime) throw 'Send/Reply Image with caption .toanime'
         m.reply(wait)
         let media = await q.download()
         let url = await uploadPomf(media)
 
         // Mengirim permintaan ke API waifu2x dan mendapatkan buffer
         let response = await fetch(`${APIs.ryzumi}/api/ai/upscaler?url=${url}`)
-        if (!response.ok) throw new Error('Gagal menghubungi Ryzen API')
+        if (!response.ok) throw new Error('Failed to contact Ryzen API')
 
         let hasil = await response.buffer()
 
-        // Mengirim file buffer langsung ke chat
+        // Send buffer files directly to chat
         await conn.sendFile(m.chat, hasil, 'hasil.jpg', global.wm, m)
     } catch (error) {
         console.error(error)
