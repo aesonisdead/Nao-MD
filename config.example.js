@@ -30,11 +30,11 @@ const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
-global.pairing = '6285864034767'
+global.pairing = '46726407722'
 global.owner = [['212605158422', 'Aethon', true]]
-global.mods = ['212660926555']
+global.mods = ['212660926555','212667876859']
 global.prems = []
-global.nomorbot = '6285864034767'
+global.nomorbot = '46726407722'
 global.nomorown = '212605158422'
 
 /*============= WATERMARK =============*/
