@@ -5,18 +5,18 @@ let handler = async (m, { conn, args }) => {
     m.reply(wait)
 
     try {
-        if (!args[0]) throw 'Masukkan link gambar original'
+        if (!args[0]) throw 'Enter the original image link'
 
         let q = m.quoted ? m.quoted : m
         let mime = (q.msg || q).mimetype || ''
-        if (!mime) throw 'Kirim/Reply Gambar dengan caption .faceswap'
+        if (!mime) throw 'Send/Reply Image with caption .faceswap'
 
         let media = await q.download()
-        if (!media) throw 'Gagal mendownload media!'
+        if (!media) throw 'Failed to download media!'
 
         let cdnResult = await ryzenCDN(media)
         let url = cdnResult.url || cdnResult
-        if (!url) throw 'Gagal upload ke RyzenCDN!'
+        if (!url) throw 'Failed to upload to RyzenCDN!'
 
         let response = await axios.get(`${APIs.ryzumi}/api/ai/faceswap`, {
             params: {
