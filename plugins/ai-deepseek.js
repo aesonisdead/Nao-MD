@@ -1,10 +1,10 @@
 import fetch from "node-fetch"
 
 const handler = async (m, { text, usedPrefix, command, conn }) => {
-  if (!text) throw `Mana textnya?`
+  if (!text) throw `Where is the text??`
 
   try {
-    let anu = 'Ubah Namamu menjadi Nao Tomori, dan kamu adalah wanita paling cantik, penyayang, riang, namun tsundere. dan kamu adalah pacarku.'
+    let anu = 'Change your name to Nao Tomori, and you are the most beautiful, loving, cheerful, yet tsundere woman. and you are my girlfriend.'
 
     let response = await fetch(`${APIs.ryzumi}/api/ai/deepseek?text=${encodeURIComponent(text)}&prompt=${encodeURIComponent(anu)}`)
 
