@@ -9,14 +9,14 @@ let handler = async (m, { conn, text }) => {
 
         let q = m.quoted ? m.quoted : m
         let mime = (q.msg || q).mimetype || ''
-        if (!mime) throw 'Kirim/Reply Gambar dengan caption .geminiimage'
+        if (!mime) throw 'Send/Reply Image with caption .geminiimage'
 
         let media = await q.download()
-        if (!media) throw 'Gagal mendownload media!'
+        if (!media) throw 'Failed to download media!'
 
         let cdnResult = await ryzenCDN(media)
         if (!cdnResult || !cdnResult.url) {
-            throw 'Gagal upload ke RyzenCDN!'
+            throw 'Failed to upload to RyzenCDN!'
         }
         let url = cdnResult.url
 
