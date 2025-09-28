@@ -429,7 +429,7 @@ export async function handler(chatUpdate) {
  * Handle groups participants update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
  */
-async function participantsUpdate({ id, participants, action }) {
+export async function participantsUpdate({ id, participants, action }) {
     // if(id in conn.chats) return // First login will spam
     if(this.isInit) return
     if(global.db.data == null) await loadDatabase()
@@ -453,7 +453,6 @@ async function participantsUpdate({ id, participants, action }) {
                             userName = userData.name;
                         }
                         
-                        module.exports = { participantsUpdate }
 
                     } catch (e) {
                     } finally {
