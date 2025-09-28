@@ -409,15 +409,20 @@ export async function handler(chatUpdate) {
                 if(m.error == null) {
                     stat.success += 1
                     stat.lastSuccess = now
-                }
-            }
         }
+        
         try {
             await (await import(`./lib/print.js`)).default(m, this)
         } catch (e) {
             console.log(m, m.quoted, e)
         }
-        if(db.data.settings[this.user.jid].autoread) await conn.readMessages([m.key])
+        if (db?.data?.settings?.[this.user?.jid]?.autoread) {
+          try {
+            await conn.readMessages([m.key])
+       } catch (err) {
+           console.error('Failed to autoread message:', err)
+       }
+        }
     }
 }
 /**
