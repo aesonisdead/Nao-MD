@@ -36,7 +36,7 @@ global.mods = ['212660926555','212667876859']
 global.prems = []
 global.nomorbot = '212714580320'
 global.nomorown = '212605158422'
-
+global.autoread = true   // ✅
 /*============= WATERMARK =============*/
 global.readMore = readMore
 global.author = 'Aethon'
